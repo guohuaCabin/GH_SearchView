@@ -1,5 +1,6 @@
 # GH_SearchView
-简易封装的一个搜索框
+
+[文章介绍：http://guohuaden.com/2017/05/20/GH-SearchView/](http://guohuaden.com/2017/05/20/GH-SearchView/)
 
 对于iOS自带的搜索框，其实我用着也挺好的，但低版本的使用：  高版本的使用:UISearchController，两个难有个统一。很多项目中都是将着两套代码都写入项目中去，这样做难免显得代码冗余。所以就简单的自定义个搜索框。
 
