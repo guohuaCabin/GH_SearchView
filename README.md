@@ -19,14 +19,6 @@ GH_SearchView *searchView_1 = [[GH_SearchView alloc]initWithFrame:CGRectMake(10,
 //或者
 //self.tableView.tableHeaderView = self.searchView;
 ```
-
-效果图如下：
-无tableView情况下：
-![GH_searchView_1](http://obzx0h1re.bkt.clouddn.com/GH_searchView_1.png)
-
-有tableView情况下：
-![GH_searchView_2](http://obzx0h1re.bkt.clouddn.com/GH_searchView_2.png)
-
 使用时需遵守<code>GH_searchDelegate</code>协议。
 其中必需实现的协议方法有一种:
 
@@ -63,5 +55,13 @@ GH_SearchView *searchView_1 = [[GH_SearchView alloc]initWithFrame:CGRectMake(10,
  */
 -(void)searchDidEndEditing:(NSString *)content;
 ```
+效果图如下：
+无tableView情况下：
+![GH_searchView_1](http://obzx0h1re.bkt.clouddn.com/GH_searchView_1.png)
+
+有tableView情况下：
+![GH_searchView_2](http://obzx0h1re.bkt.clouddn.com/GH_searchView_2.png)
+
+
 
 
