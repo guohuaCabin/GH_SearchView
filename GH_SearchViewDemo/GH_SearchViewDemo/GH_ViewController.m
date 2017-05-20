@@ -32,6 +32,8 @@
     [searchView_1  setCancelButtonTitleColor:[UIColor blueColor]];
     //设置背景色透明度
     [searchView_1 setBackgroundColorWithAlphaComponent:0.5];
+    //设置激活状态
+    [searchView_1 setSearchActiveState:YES];
     
     [self.view addSubview:searchView_1];
     

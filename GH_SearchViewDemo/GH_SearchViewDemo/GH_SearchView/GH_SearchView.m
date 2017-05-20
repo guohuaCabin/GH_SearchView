@@ -190,7 +190,7 @@
 
 }
 #pragma mark ---show cancelButton
-- (void)showCancelButton:(NSNotification *) Notification{
+- (void)showCancelButton:(UIButton *) sender{
     
     
     [UIView animateWithDuration:0.5 animations:^{
@@ -249,29 +249,41 @@
     
 }
 
+-(void)setIsSearchActive:(BOOL)isSearchActive
+{
+    _isSearchActive = isSearchActive;
+}
+
 // set search active state
 -(void)setSearchActiveState:(BOOL)isSearchActive
 {
     self.isSearchActive = isSearchActive;
-    [self.searchTextField resignFirstResponder];
-    
-    if (self.cancelButton) {
-        [self.cancelButton setHidden:YES];
-        self.cancelButton.frame = CGRectZero;
-        [self.cancelButton removeFromSuperview];
+    if (isSearchActive == YES) {
+        [self.searchTextField becomeFirstResponder];
+        [self showCancelButton:nil];
+    }else{
+       
+        [self.searchTextField resignFirstResponder];
         
-        CGRect textFieldFrame = self.searchTextField.frame;
-        textFieldFrame.size.width = _searchTextFieldWidth;
-        self.searchTextField.frame = textFieldFrame;
-        
-        CGRect baseViewFrame = self.baseView.frame;
-        baseViewFrame.size.width = _baseViewWidth;
-        self.baseView.frame = baseViewFrame;
-        
-        CGRect searchImageViewFrame = self.searchImageView.frame;
-        searchImageViewFrame.origin.x = _searchImageViewX;
-        self.searchImageView.frame = searchImageViewFrame;
+        if (self.cancelButton) {
+            [self.cancelButton setHidden:YES];
+            self.cancelButton.frame = CGRectZero;
+            [self.cancelButton removeFromSuperview];
+            
+            CGRect textFieldFrame = self.searchTextField.frame;
+            textFieldFrame.size.width = _searchTextFieldWidth;
+            self.searchTextField.frame = textFieldFrame;
+            
+            CGRect baseViewFrame = self.baseView.frame;
+            baseViewFrame.size.width = _baseViewWidth;
+            self.baseView.frame = baseViewFrame;
+            
+            CGRect searchImageViewFrame = self.searchImageView.frame;
+            searchImageViewFrame.origin.x = _searchImageViewX;
+            self.searchImageView.frame = searchImageViewFrame;
+        }
     }
+  
     
 }
 // set cancel button title color
